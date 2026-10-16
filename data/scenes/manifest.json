@@ -1,0 +1,78 @@
+{
+  "image_size": [
+    96,
+    128
+  ],
+  "depth_unit": "meter",
+  "disparity_unit": "pixel",
+  "intrinsics": {
+    "fx": 100.0,
+    "fy": 100.0,
+    "cx": 63.5,
+    "cy": 47.5,
+    "baseline_m": 0.1
+  },
+  "note": "单目与立体预测是可复现的误差夹具，不是训练出来的模型权重。",
+  "scenes": [
+    {
+      "scene_id": "office_desk",
+      "failure_mode": "normal",
+      "file": "office_desk.npz"
+    },
+    {
+      "scene_id": "hallway_slant",
+      "failure_mode": "normal",
+      "file": "hallway_slant.npz"
+    },
+    {
+      "scene_id": "white_wall",
+      "failure_mode": "weak_texture",
+      "file": "white_wall.npz"
+    },
+    {
+      "scene_id": "foggy_corridor",
+      "failure_mode": "weak_texture",
+      "file": "foggy_corridor.npz"
+    },
+    {
+      "scene_id": "brick_repeat",
+      "failure_mode": "repeated_texture",
+      "file": "brick_repeat.npz"
+    },
+    {
+      "scene_id": "fence_repeat",
+      "failure_mode": "repeated_texture",
+      "file": "fence_repeat.npz"
+    },
+    {
+      "scene_id": "doorway_edge",
+      "failure_mode": "occlusion_boundary",
+      "file": "doorway_edge.npz"
+    },
+    {
+      "scene_id": "box_occluder",
+      "failure_mode": "occlusion_boundary",
+      "file": "box_occluder.npz"
+    },
+    {
+      "scene_id": "distant_building",
+      "failure_mode": "far",
+      "file": "distant_building.npz"
+    },
+    {
+      "scene_id": "skyline_far",
+      "failure_mode": "far",
+      "file": "skyline_far.npz"
+    },
+    {
+      "scene_id": "glass_window",
+      "failure_mode": "transparent",
+      "file": "glass_window.npz"
+    },
+    {
+      "scene_id": "mirror_cabinet",
+      "failure_mode": "transparent",
+      "file": "mirror_cabinet.npz"
+    }
+  ]
+}
