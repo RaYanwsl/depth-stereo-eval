@@ -24,12 +24,13 @@ def _dilate(mask: np.ndarray, radius: int) -> np.ndarray:
     if radius <= 0:
         return mask
     padded = np.pad(mask, radius, mode="constant", constant_values=False)
-    out = np.zeros_like(mask)
     height, width = mask.shape
-    for dy in range(-radius, radius + 1):
-        for dx in range(-radius, radius + 1):
-            out |= padded[radius + dy : radius + dy + height, radius + dx : radius + dx + width]
-    return out
+    shifts = [
+        padded[radius + dy : radius + dy + height, radius + dx : radius + dx + width]
+        for dy in range(-radius, radius + 1)
+        for dx in range(-radius, radius + 1)
+    ]
+    return np.logical_or.reduce(shifts)
 
 
 def edge_f1(
